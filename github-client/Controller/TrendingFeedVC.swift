@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TrendingFeedVC.swift
 //  github-client
 //
 //  Created by Michael Alexander on 1/3/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TrendingFeedVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
