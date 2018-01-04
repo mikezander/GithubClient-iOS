@@ -15,6 +15,7 @@
 		C44DB8A01FFD610600D4FECF /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44DB89F1FFD610600D4FECF /* SearchVC.swift */; };
 		C44DB8A21FFDBAB800D4FECF /* RoundedBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44DB8A11FFDBAB800D4FECF /* RoundedBorderButton.swift */; };
 		C44DB8A41FFDBBEE00D4FECF /* RoundedBorderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44DB8A31FFDBBEE00D4FECF /* RoundedBorderTextField.swift */; };
+		C44DB8A61FFE61BF00D4FECF /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44DB8A51FFE61BF00D4FECF /* Repo.swift */; };
 		E40A957A42831DA12D84387F /* Pods_github_client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78811CC5F33167AA557D667F /* Pods_github_client.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		C44DB89F1FFD610600D4FECF /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		C44DB8A11FFDBAB800D4FECF /* RoundedBorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorderButton.swift; sourceTree = "<group>"; };
 		C44DB8A31FFDBBEE00D4FECF /* RoundedBorderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorderTextField.swift; sourceTree = "<group>"; };
+		C44DB8A51FFE61BF00D4FECF /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		D7DDE4CF4D142E03EC51C805 /* Pods-github-client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github-client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-github-client/Pods-github-client.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 		C44DB89E1FFD5DCF00D4FECF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C44DB8A51FFE61BF00D4FECF /* Repo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				C44DB8A01FFD610600D4FECF /* SearchVC.swift in Sources */,
 				C44DB8A41FFDBBEE00D4FECF /* RoundedBorderTextField.swift in Sources */,
 				C44DB88D1FFD5D9800D4FECF /* TrendingFeedVC.swift in Sources */,
+				C44DB8A61FFE61BF00D4FECF /* Repo.swift in Sources */,
 				C44DB88B1FFD5D9800D4FECF /* AppDelegate.swift in Sources */,
 				C44DB8A21FFDBAB800D4FECF /* RoundedBorderButton.swift in Sources */,
 			);
