@@ -17,6 +17,8 @@
 		C44DB8A41FFDBBEE00D4FECF /* RoundedBorderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44DB8A31FFDBBEE00D4FECF /* RoundedBorderTextField.swift */; };
 		C44DB8A61FFE61BF00D4FECF /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44DB8A51FFE61BF00D4FECF /* Repo.swift */; };
 		C44DB8A81FFE644000D4FECF /* TrendingRepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44DB8A71FFE644000D4FECF /* TrendingRepoCell.swift */; };
+		C44DB8AC1FFE6E8800D4FECF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44DB8AB1FFE6E8800D4FECF /* Constants.swift */; };
+		C44DB8AE1FFE6FE200D4FECF /* DownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44DB8AD1FFE6FE200D4FECF /* DownloadService.swift */; };
 		E40A957A42831DA12D84387F /* Pods_github_client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78811CC5F33167AA557D667F /* Pods_github_client.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,8 @@
 		C44DB8A31FFDBBEE00D4FECF /* RoundedBorderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorderTextField.swift; sourceTree = "<group>"; };
 		C44DB8A51FFE61BF00D4FECF /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		C44DB8A71FFE644000D4FECF /* TrendingRepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRepoCell.swift; sourceTree = "<group>"; };
+		C44DB8AB1FFE6E8800D4FECF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C44DB8AD1FFE6FE200D4FECF /* DownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadService.swift; sourceTree = "<group>"; };
 		D7DDE4CF4D142E03EC51C805 /* Pods-github-client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github-client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-github-client/Pods-github-client.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +92,8 @@
 		C44DB8891FFD5D9800D4FECF /* github-client */ = {
 			isa = PBXGroup;
 			children = (
+				C44DB8AA1FFE6E6000D4FECF /* Utilities */,
+				C44DB8A91FFE6E4F00D4FECF /* Services */,
 				C44DB89E1FFD5DCF00D4FECF /* Model */,
 				C44DB89D1FFD5DCC00D4FECF /* View */,
 				C44DB89C1FFD5DC800D4FECF /* Controller */,
@@ -125,6 +131,22 @@
 				C44DB8A51FFE61BF00D4FECF /* Repo.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C44DB8A91FFE6E4F00D4FECF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C44DB8AD1FFE6FE200D4FECF /* DownloadService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C44DB8AA1FFE6E6000D4FECF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C44DB8AB1FFE6E8800D4FECF /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +291,8 @@
 				C44DB8A61FFE61BF00D4FECF /* Repo.swift in Sources */,
 				C44DB88B1FFD5D9800D4FECF /* AppDelegate.swift in Sources */,
 				C44DB8A21FFDBAB800D4FECF /* RoundedBorderButton.swift in Sources */,
+				C44DB8AC1FFE6E8800D4FECF /* Constants.swift in Sources */,
+				C44DB8AE1FFE6FE200D4FECF /* DownloadService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
