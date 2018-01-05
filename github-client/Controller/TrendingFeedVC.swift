@@ -20,7 +20,6 @@ class TrendingFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         DownloadService.instance.downloadTrendingRepos { (reposArray) in
             for repo in reposArray {
                 print(repo.name)
-                print("\(repo.description)\n")
             }
         }
     }
