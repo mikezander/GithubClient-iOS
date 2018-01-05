@@ -7,38 +7,32 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class TrendingFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TrendingFeedVC: UIViewController{
 
     @IBOutlet weak var tableView: UITableView!
     
+    var dataSource = PublishSubject<[Repo]>()
+    var disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.reloadData()
-        DownloadService.instance.downloadTrendingRepos { (reposArray) in
-            for repo in reposArray {
-                print(repo.name)
-            }
+        fetchData()
+        bindDataToTableView()
+    }
+
+    private func fetchData() {
+        DownloadService.instance.downloadTrendingRepos { (trendingRepoArray) in
+            self.dataSource.onNext(trendingRepoArray)
         }
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "trendingRepoCell", for: indexPath) as? TrendingRepoCell  else { return UITableViewCell() }
-        
-        let repo = Repo(image: UIImage(named: "searchIconLarge")!, name: "Swift", description: "Apple's programming language", numberOfForks: 355, language: "C++", numberOfContributors: 562, repoUrl: "www.google.com")
-        
-        cell.configureCell(repo: repo)
-        return cell
+    private func bindDataToTableView() {
+        dataSource.bind(to: tableView.rx.items(cellIdentifier: "trendingRepoCell")) { (row, repo: Repo, cell: TrendingRepoCell) in
+            cell.configureCell(repo: repo)
+            }.disposed(by: disposeBag)
     }
 }
 
