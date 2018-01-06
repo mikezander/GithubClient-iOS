@@ -10,7 +10,6 @@ import UIKit
 
 class TrendingRepoCell: UITableViewCell {
 
-    
     @IBOutlet weak var repoNameLbl: UILabel!
     @IBOutlet weak var repoDescriptionLbl: UILabel!
     @IBOutlet weak var repoImageView: UIImageView!

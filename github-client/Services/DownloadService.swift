@@ -20,8 +20,8 @@ class DownloadService {
             guard let repoDictionaryArray = json["items"] as? [[String: Any]] else { return }
             
             for repoDict in repoDictionaryArray {
-                if trendingReposArray.count <= 9 {
-                    guard let name = repoDict["name"] as? String,
+
+                guard let name = repoDict["name"] as? String,
                         let description = repoDict["description"] as? String,
                         let numberOfForks = repoDict["forks_count"] as? Int,
                         let language = repoDict["language"] as? String,
@@ -31,11 +31,9 @@ class DownloadService {
                         let avatarUrl = ownerDict["avatar_url"] as? String else { break }
                     
                     let repoDictionary: [String: Any] = ["name": name, "description": description, "forks_count": numberOfForks, "language": language, "html_url": repoUrl, "contributors_url": contributorsUrl, "avatar_url": avatarUrl]
-                    
+
                     trendingReposArray.append(repoDictionary)
-                } else {
-                    break
-                }
+
             }
             completion(trendingReposArray)
         }
@@ -46,9 +44,11 @@ class DownloadService {
         donwloadTrendingReposDictArray { (trendingReposDictArray) in
             for dict in trendingReposDictArray {
                 self.downloadTrendingRepo(formDictionary: dict, completion: { (returnedRepo) in
-                    if reposArray.count < 9 {
+                    if reposArray.count != trendingReposDictArray.count - 1 {
+                    //if reposArray.count < 9 {
                         reposArray.append(returnedRepo)
                     } else {
+                   // } else {
                         let sortedArray = reposArray.sorted(by: { (repoA, repoB) -> Bool in
                             if repoA.numberOfForks > repoB.numberOfForks {
                                 return true
@@ -58,6 +58,7 @@ class DownloadService {
                         })
                         completion(sortedArray)
                     }
+                    //}
                 })
             }
         }
@@ -66,7 +67,6 @@ class DownloadService {
     
     func downloadTrendingRepo(formDictionary dict: [String: Any], completion: @escaping (_ repo: Repo) -> Void){
         let avatarUrl = dict["avatar_url"] as! String
-        
         let contributorsUrl = dict["contributors_url"] as! String
         let name = dict["name"] as! String
         let description = dict["description"] as! String

@@ -25,5 +25,6 @@ class Repo {
         self.language = language
         self.numberOfContributors = numberOfContributors
         self.repoUrl = repoUrl
-    }    
+    }
+   
 }
