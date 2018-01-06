@@ -21,6 +21,15 @@ class TrendingRepoCell: UITableViewCell {
     
     private var repoUrl: String?
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        backView.layer.cornerRadius = 15
+        backView.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        backView.layer.shadowOpacity = 0.25
+        backView.layer.shadowRadius = 5.0
+        backView.layer.shadowOffset = CGSize(width: 0, height: 0)
+    }
+    
     func configureCell(repo: Repo) {
         repoImageView.image = repo.image
         repoNameLbl.text = repo.name
@@ -29,18 +38,5 @@ class TrendingRepoCell: UITableViewCell {
         languageLbl.text = repo.language
         contributorsLbl.text = String(repo.numberOfContributors)
         repoUrl = repo.repoUrl
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        backView.layer.cornerRadius = 15
-        backView.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        backView.layer.shadowOpacity = 0.25
-        backView.layer.shadowRadius = 5.0
-        backView.layer.shadowOffset = CGSize(width: 0, height: 0)
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
     }
 }
