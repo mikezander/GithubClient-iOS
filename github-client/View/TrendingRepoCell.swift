@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class TrendingRepoCell: UITableViewCell {
+    
+    var disposeBag = DisposeBag()
 
     @IBOutlet weak var repoNameLbl: UILabel!
     @IBOutlet weak var repoDescriptionLbl: UILabel!
@@ -38,5 +42,11 @@ class TrendingRepoCell: UITableViewCell {
         languageLbl.text = repo.language
         contributorsLbl.text = String(repo.numberOfContributors)
         repoUrl = repo.repoUrl
+        
+        viewReadMeBtn.rx.tap.subscribe(onNext: {
+            guard let url = self.repoUrl else { return }
+            self.window?.rootViewController?.presentSFSafariVCFor(url: url)
+            })
+            .disposed(by: disposeBag)
     }
 }
